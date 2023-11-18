@@ -1,0 +1,31 @@
+For all information for Angular: https://angular.dev/
+
+ 0. Creación del proyecto: ng new todoapp --skip-tests
+     New way for implementing a ng for
+
+     @for (item of tasks; track item) {
+         {{ item }}
+     }
+
+ 1. Generate componentes
+     ng generate component pages/home
+     ng generate component pages/labs
+
+ 2. Property Binding. Linkin a property oa html element with a variable in te backen
+     <input type="text" [value]="title">
+
+ 3. Event Binding: click y doble click
+    <button (click)="clickHandler()">Clic Me</button>
+
+ 4. Event binding: keydown
+     <input type="text" (keydown)="keyBoardHandler($event)">
+
+ 5. Modelo de reactividad con Signals
+     Signals es un Modelo de reactividad que tiene reactividad granular, contrario a zone.js que debia recorrer todo el dom para saber esto
+
+ 6.  Creando un Signal en Angular
+     in the ts file: myfirstSignal = signal('Oscar')
+     in the html file:  {{myfirstSignal()}}
+
+ 7. Directivas de control
+
