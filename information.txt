@@ -29,3 +29,6 @@ For all information for Angular: https://angular.dev/
 
  7. Directivas de control
 
+ 8. this.tasks.update((task) => [...task, newTask])
+     Actualiza el valor del signal. Recibe el valor anterior y el nuevop valor
+
