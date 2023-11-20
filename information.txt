@@ -31,4 +31,47 @@ For all information for Angular: https://angular.dev/
 
  8. this.tasks.update((task) => [...task, newTask])
      Actualiza el valor del signal. Recibe el valor anterior y el nuevop valor
+ 
+ 9. Controlando un input
+      constructor() {
+         this.colorCtrl.valueChanges.subscribe(value => {
+             console.log(value)
+         })
+     }
+
+     colorCtrl = new FormControl()
+
+     <input type="color" [formControl]="colorCtrl">
+     <p>Color: {{ colorCtrl.value }}</p>
+ 10. Clases en Angular
+     Activar las validaciones con una clase que se activa dinámicamente:
+     nameCtrl = new FormControl("abc", {
+         nonNullable: true,
+         validators: [
+             Validators.required,
+             Validators.minLength(3),
+         ]
+     })
+
+     <p>
+         <input type="text" [formControl]="nameCtrl"> <br/>
+         <span class="message-error" [class.show] = "nameCtrl.invalid && nameCtrl.touched">Nombre inválido</span>
+     </p>
+     .message-error {
+         background-color: red;
+         color: white;
+         opacity: 0;
+         transition: all linear .5s;
+     }
+     .message-error.show {
+         opacity: 1;
+     }
+ 11. Estados compuestos con computed
+     Estados que derivan de otros estados
+ 12. Usando effect para localStorage
+     Nota: Si el effect se va a colocar en un lugar diferente el constructor, debe configurrsele: { injector: this.injector }
+     Para migrar a la nueva sintaxix de angular
+     ng g @angular/core:control-flow
+
+
 
